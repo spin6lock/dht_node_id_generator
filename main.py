@@ -43,7 +43,7 @@ def gen_node_id():
     b = (crc>>16) & 0xff
     c = ((crc>>8) & 0xf8) | (random.randint(0, 255) & 0x7)
     last = rand
-    node_id = ''.join([(chr(a)+chr(b)+chr(c)).encode("hex"), ''.join([chr(random.randint(0,255)) for i in xrange(17)]).encode("hex"), chr(rand).encode("hex")])
+    node_id = ''.join([(chr(a)+chr(b)+chr(c)).encode("hex"), ''.join([chr(random.randint(0,255)) for i in xrange(16)]).encode("hex"), chr(rand).encode("hex")])
     return node_id
 
 if __name__ == "__main__":
